@@ -1,23 +1,61 @@
 aid: aptihealth
+
 name: aptihealth
-description: 'aptihealth is a company surfaced via the API Evangelist harvest backlog (source: secondary-market)
-  and added to the network as a stub for full-pipeline profiling.'
+
+description: 'aptihealth is a company surfaced via the API Evangelist harvest backlog (source: secondary-market) and added to the network as a
+  stub for full-pipeline profiling.'
+
 url: https://raw.githubusercontent.com/api-evangelist/aptihealth/refs/heads/main/apis.yml
+
 x-type: company
+
 x-source: harvest:secondary-market
-x-tier: stub
-x-tier-reason: harvest
+
+x-tier: profiled
+x-tier-reason: enrichment pass 2026-09-25 (modular-v1; was harvest)
+
 specificationVersion: '0.20'
+
 created: '2026-09-25'
+
 modified: '2026-09-25'
+
 tags:
 - Company
-apis: []
+
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
+
 common:
+- type: Hosts
+  url: hosts/aptihealth-hosts.yml
+- type: Vendors
+  url: vendors/aptihealth-vendors.yml
+- type: DomainSecurity
+  url: security/aptihealth-domain-security.yml
 - type: Website
   url: https://www.nasdaqprivatemarket.com/
+
+apis:
+- name: aptihealth API
+  description: Aptihealth provides health data APIs (description not found, placeholder).
+  humanURL: https://www.aptihealth.com/
+  aid: aptihealth:aptihealth-api
+
+x-coverage:
+  state: unreadable
+  reason: js-rendered-docs
+  detail: Aptihealth website returns JavaScript-rendered pages preventing machine-readable spec discovery.
+  evidence:
+  - url: https://www.aptihealth.com/
+    status: 200
+  checked: 2026-09-25
+x-enrichment:
+  date: '2026-09-25'
+  status: enriched
+  artifacts_added: 4
+  pass: modular-v1
+  engine: identity=local,contract=local,surfaces=local,docs=local
